@@ -4,11 +4,16 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 export interface Booking {
-  userID: 1;
+  bookingID?: number;
+  userID: number;
   packageID: number;
-  startDate: string; // Change to string
-  endDate: string; // Change to string
+  startDate: string;
+  endDate: string;
   status: string;
+  paymentID?: number;
+  insurances?: any[];
+  user?: any;
+  payment?: any;
 }
 
 @Injectable({
@@ -26,5 +31,19 @@ export class BookingService {
         return throwError(() => error);
       })
     );
+  }
+
+  getAllBookings(): Observable<Booking[]> {
+    return this.http.get<Booking[]>(this.apiUrl);
+  }
+
+  updateBooking(id: number, startDate: string, endDate: string): Observable<any> {
+    return this.http.put(`${this.apiUrl}/${id}`, { startDate, endDate }, {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    });
+  }
+
+  deleteBooking(id: number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${id}`);
   }
 }

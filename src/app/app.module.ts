@@ -4,16 +4,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { PackagesComponent } from './components/packages/packages.component';
 import { BooknowComponent } from './components/booknow/booknow.component';
+import { AdminBookingsComponent } from './admin-bookings/admin-bookings.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     PackagesComponent,
-    BooknowComponent
+    BooknowComponent,
+    AdminBookingsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule // Ensure HttpClientModule is imported
+    HttpClientModule, // Ensure HttpClientModule is imported
+    FormsModule
   ],
   providers: [],
   bootstrap: [PackagesComponent]
