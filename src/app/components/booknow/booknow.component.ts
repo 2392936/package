@@ -122,7 +122,7 @@ export class BooknowComponent implements OnInit {
         userID: 1 as 1, // Replace with the actual user ID if available
         startDate: startDate.toISOString(),
         endDate: endDate.toISOString(),
-        status: 'Pending'
+        status: 'Confirmed'
       };
 
       console.log('Sending booking data:', bookingData);
