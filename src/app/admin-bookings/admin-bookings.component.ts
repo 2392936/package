@@ -61,16 +61,16 @@ export class AdminBookingsComponent implements OnInit {
     });
   }
 
-  deleteBooking(booking: Booking) {
-    if (confirm('Are you sure you want to delete this booking?')) {
-      this.bookingService.deleteBooking(booking.bookingID!).subscribe({
-        next: () => {
-          this.loadBookings();
-        },
-        error: (err) => {
-          alert('Failed to delete booking. It may have related records or does not exist.');
-        }
-      });
-    }
-  }
+//   deleteBooking(booking: Booking) {
+//     if (confirm('Are you sure you want to delete this booking?')) {
+//       this.bookingService.deleteBooking(booking.bookingID!).subscribe({
+//         next: () => {
+//           this.loadBookings();
+//         },
+//         error: (err) => {
+//           alert('Failed to delete booking. It may have related records or does not exist.');
+//         }
+//       });
+//     }
+//   }
 }
